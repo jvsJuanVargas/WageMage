@@ -1,6 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://bubrmym00tlbx"]
+[gd_scene load_steps=3 format=3 uid="uid://bubrmym00tlbx"]
 
 [ext_resource type="Script" uid="uid://bhpdigqvjggb6" path="res://Scripts/IntroScreen.gd" id="1_lpg78"]
+[ext_resource type="Texture2D" uid="uid://uttvqlnm7bxr" path="res://Assets/Sprites/Application/SplashLogo.png" id="2_kqjj0"]
 
 [node name="IntroScreen" type="Node2D"]
 script = ExtResource("1_lpg78")
+
+[node name="FullContainer" type="CanvasLayer" parent="."]
+
+[node name="BackgroundColor" type="ColorRect" parent="FullContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12549, 0.180392, 0.227451, 1)
+
+[node name="BootSplash" type="Control" parent="FullContainer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SplashLogo" type="Sprite2D" parent="FullContainer/BootSplash"]
+texture = ExtResource("2_kqjj0")
