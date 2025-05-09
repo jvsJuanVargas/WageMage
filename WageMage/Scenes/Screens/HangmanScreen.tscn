@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://cds0cpgte4hr4"]
+[gd_scene load_steps=2 format=3 uid="uid://cds0cpgte4hr4"]
+
+[ext_resource type="Script" uid="uid://cp1qneahm7ot1" path="res://Scenes/Screens/HangmanScreen.gd" id="1_bfdro"]
 
 [node name="HangmanScreen" type="Node2D"]
+script = ExtResource("1_bfdro")
 
 [node name="GameLayer" type="CanvasLayer" parent="."]
 
