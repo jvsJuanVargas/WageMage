@@ -19,6 +19,7 @@ config/icon="res://Assets/Sprites/Application/icon.svg"
 
 [autoload]
 
+SceneManager="*res://Scenes/Managers/SceneManager.tscn"
 GameManager="*res://Scenes/Managers/GameManager.tscn"
 
 [debug]
