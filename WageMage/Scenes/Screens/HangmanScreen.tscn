@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=3 uid="uid://cds0cpgte4hr4"]
+
+[ext_resource type="Script" uid="uid://cp1qneahm7ot1" path="res://Scenes/Screens/HangmanScreen.gd" id="1_bfdro"]
+[ext_resource type="Texture2D" uid="uid://cya082dy8ih86" path="res://Trash/GoldenRatio.png" id="2_jpe8b"]
+
+[node name="HangmanScreen" type="Node2D"]
+script = ExtResource("1_bfdro")
+
+[node name="GameLayer" type="CanvasLayer" parent="."]
+
+[node name="BackgroundColor" type="ColorRect" parent="GameLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameContainer" type="Control" parent="GameLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -874.0
+offset_top = -540.0
+offset_right = 874.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Keys" type="Control" parent="GameLayer/GameContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -668.0
+offset_top = -382.0
+offset_right = 668.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="GameLayer/GameContainer/Keys"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 1, 1)
+
+[node name="Lines" type="VBoxContainer" parent="GameLayer/GameContainer/Keys"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -668.0
+offset_top = -169.0
+offset_right = 668.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Line_1" type="HBoxContainer" parent="GameLayer/GameContainer/Keys/Lines"]
+custom_minimum_size = Vector2(1336, 110)
+layout_mode = 2
+alignment = 1
+
+[node name="Line_2" type="HBoxContainer" parent="GameLayer/GameContainer/Keys/Lines"]
+custom_minimum_size = Vector2(1336, 110)
+layout_mode = 2
+alignment = 1
+
+[node name="Line_3" type="HBoxContainer" parent="GameLayer/GameContainer/Keys/Lines"]
+custom_minimum_size = Vector2(1336, 110)
+layout_mode = 2
+alignment = 1
+
+[node name="Ruller" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Ruller"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jpe8b")

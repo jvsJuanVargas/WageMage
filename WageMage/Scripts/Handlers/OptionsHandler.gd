@@ -225,6 +225,7 @@ enum GameState {
 	INTRO,
 	TITLE,
 	LOADING,
+	HANGMAN,
 }
 
 
@@ -286,6 +287,7 @@ enum SceneScreen {
 	INTRO_SCREEN,
 	TITLE_SCREEN,
 	GAME_SCREEN,
+	HANGMAN_SCREEN,
 }
 
 

@@ -222,6 +222,8 @@ func change_scene(scene_screen:OptionsHandler.SceneScreen) -> void:
 			path_to_new_scene = 'res://Scenes/Screens/IntroScreen.tscn'
 		OptionsHandler.SceneScreen.TITLE_SCREEN:
 			path_to_new_scene = 'res://Scenes/Screens/TitleScreen.tscn'
+		OptionsHandler.SceneScreen.HANGMAN_SCREEN:
+			path_to_new_scene = 'res://Scenes/Screens/HangmanScreen.tscn'
 	SceneManager.change_scene(path_to_new_scene)
 
 
