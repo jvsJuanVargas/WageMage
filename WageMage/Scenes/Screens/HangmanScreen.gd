@@ -18,6 +18,7 @@ func _ready() -> void:
 	keys_line_1 = $GameLayer/GameContainer/Keys/Lines/Line_1
 	keys_line_2 = $GameLayer/GameContainer/Keys/Lines/Line_2
 	keys_line_3 = $GameLayer/GameContainer/Keys/Lines/Line_3
+	$GameLayer/GameContainer/Keys/BackgroundColor.visible = false
 	configure()
 
 

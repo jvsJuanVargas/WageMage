@@ -14,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.147322, 0.306524, 0.384058, 1)
 
 [node name="GameContainer" type="Control" parent="GameLayer"]
 layout_mode = 3
@@ -37,20 +38,20 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -668.0
-offset_top = -382.0
+offset_top = -318.0
 offset_right = 668.0
-offset_bottom = -32.0
+offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="ColorRect" type="ColorRect" parent="GameLayer/GameContainer/Keys"]
+[node name="BackgroundColor" type="ColorRect" parent="GameLayer/GameContainer/Keys"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0, 1, 1)
+color = Color(1, 1, 1, 0.2)
 
 [node name="Lines" type="VBoxContainer" parent="GameLayer/GameContainer/Keys"]
 layout_mode = 1
@@ -60,30 +61,35 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -668.0
-offset_top = -169.0
+offset_top = -137.0
 offset_right = 668.0
-offset_bottom = 169.0
+offset_bottom = 137.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 8
 
 [node name="Line_1" type="HBoxContainer" parent="GameLayer/GameContainer/Keys/Lines"]
-custom_minimum_size = Vector2(1336, 110)
+custom_minimum_size = Vector2(1336, 86)
 layout_mode = 2
+theme_override_constants/separation = 8
 alignment = 1
 
 [node name="Line_2" type="HBoxContainer" parent="GameLayer/GameContainer/Keys/Lines"]
-custom_minimum_size = Vector2(1336, 110)
+custom_minimum_size = Vector2(1336, 86)
 layout_mode = 2
+theme_override_constants/separation = 8
 alignment = 1
 
 [node name="Line_3" type="HBoxContainer" parent="GameLayer/GameContainer/Keys/Lines"]
-custom_minimum_size = Vector2(1336, 110)
+custom_minimum_size = Vector2(1336, 86)
 layout_mode = 2
+theme_override_constants/separation = 8
 alignment = 1
 
 [node name="Ruller" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="Sprite2D" type="Sprite2D" parent="Ruller"]
+[node name="GoldenRatio" type="Sprite2D" parent="Ruller"]
 modulate = Color(1, 1, 1, 0.2)
 position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
