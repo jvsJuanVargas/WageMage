@@ -1,0 +1,166 @@
+{
+    "words": {
+        "en": [
+            {
+                "fixed": "_ALL",
+                "variants": [
+                    {"leter": "B", "word": "BALL"},
+                    {"leter": "C", "word": "CALL"},
+                    {"leter": "F", "word": "FALL"},
+                    {"leter": "H", "word": "HALL"},
+                    {"leter": "M", "word": "MALL"},
+                    {"leter": "T", "word": "TALL"},
+                    {"leter": "W", "word": "WALL"}
+                ]
+            },
+            {
+                "fixed": "_AME",
+                "variants": [
+                    {"leter": "C", "word": "CAME"},
+                    {"leter": "D", "word": "DAME"},
+                    {"leter": "F", "word": "FAME"},
+                    {"leter": "G", "word": "GAME"},
+                    {"leter": "L", "word": "LAME"},
+                    {"leter": "N", "word": "NAME"},
+                    {"leter": "S", "word": "SAME"},
+                    {"leter": "T", "word": "TAME"}
+                ]
+            },
+            {
+                "fixed": "_ASH",
+                "variants": [
+                    {"leter": "B", "word": "BASH"},
+                    {"leter": "C", "word": "CASH"},
+                    {"leter": "D", "word": "DASH"},
+                    {"leter": "G", "word": "GASH"},
+                    {"leter": "H", "word": "HASH"},
+                    {"leter": "L", "word": "LASH"},
+                    {"leter": "M", "word": "MASH"},
+                    {"leter": "W", "word": "WASH"}
+                ]
+            },
+            {
+                "fixed": "_ATE",
+                "variants": [
+                    {"leter": "D", "word": "DATE"},
+                    {"leter": "F", "word": "FATE"},
+                    {"leter": "G", "word": "GATE"},
+                    {"leter": "H", "word": "HATE"},
+                    {"leter": "L", "word": "LATE"},
+                    {"leter": "M", "word": "MATE"},
+                    {"leter": "R", "word": "RATE"},
+                    {"leter": "W", "word": "WAIT"}
+
+                ]
+            },
+            {
+                "fixed": "_INE",
+                "variants": [
+                    {"leter": "D", "word": "DINE"},
+                    {"leter": "F", "word": "FINE"},
+                    {"leter": "L", "word": "LINE"},
+                    {"leter": "M", "word": "MINE"},
+                    {"leter": "P", "word": "PINE"},
+                    {"leter": "V", "word": "VINE"},
+                    {"leter": "W", "word": "WINE"}
+                ]   
+            },
+            {
+                "fixed": "_OLD",
+                "variants": [
+                    {"leter": "B", "word": "BOLD"},
+                    {"leter": "C", "word": "COLD"},
+                    {"leter": "F", "word": "FOLD"},
+                    {"leter": "G", "word": "GOLD"},
+                    {"leter": "H", "word": "HOLD"},
+                    {"leter": "M", "word": "MOLD"},
+                    {"leter": "T", "word": "TOLD"}
+                ]   
+            },
+            {
+                "fixed": "_UCK",
+                "variants": [
+                    {"leter": "B", "word": "BUCK"},
+                    {"leter": "D", "word": "DUCK"},
+                    {"leter": "L", "word": "LUCK"},
+                    {"leter": "M", "word": "MUCK"},
+                    {"leter": "P", "word": "PUCK"},
+                    {"leter": "S", "word": "SUCK"},
+                    {"leter": "T", "word": "TUCK"}
+                ]
+            }
+        ],
+        "pt": [
+            {
+                "fixed": "_ALA",
+                "variants": [
+                    {"leter": "B", "word": "BALA"},
+                    {"leter": "F", "word": "FALA"},
+                    {"leter": "G", "word": "GALA"},
+                    {"leter": "M", "word": "MALA"},
+                    {"leter": "S", "word": "SALA"},
+                    {"leter": "T", "word": "TALA"},
+                    {"leter": "V", "word": "VALA"}
+                ]
+            },
+            {
+                "fixed": "_ATA",
+                "variants": [
+                    {"leter": "B", "word": "BATA"},
+                    {"leter": "D", "word": "DATA"},
+                    {"leter": "G", "word": "GATA"},
+                    {"leter": "L", "word": "LATA"},
+                    {"leter": "M", "word": "MATA"},
+                    {"leter": "N", "word": "NATA"},
+                    {"leter": "P", "word": "PATA"},
+                    {"leter": "R", "word": "RATA"}
+                ]
+            },
+            {
+                "fixed": "_ATO",
+                "variants": [
+                    {"leter": "B", "word": "BATO"},
+                    {"leter": "C", "word": "CATO"},
+                    {"leter": "G", "word": "GATO"},
+                    {"leter": "F", "word": "FATO"},
+                    {"leter": "L", "word": "LATO"},
+                    {"leter": "M", "word": "MATO"},
+                    {"leter": "P", "word": "PATO"},
+                    {"leter": "R", "word": "RATO"},
+                    {"leter": "T", "word": "TATO"}
+                ]
+            },
+            {
+                "fixed": "_ECA",
+                "variants": [
+                    {"leter": "B", "word": "BECA"},
+                    {"leter": "F", "word": "FECA"},
+                    {"leter": "L", "word": "LECA"},
+                    {"leter": "M", "word": "MECA"},
+                    {"leter": "P", "word": "PECA"},
+                    {"leter": "T", "word": "TECA"}
+                ]
+            },
+            {
+                "fixed": "_AMA",
+                "variants": [
+                    {"leter": "C", "word": "CAMA"},
+                    {"leter": "D", "word": "DAMA"},
+                    {"leter": "F", "word": "FAMA"},
+                    {"leter": "G", "word": "GAMA"},
+                    {"leter": "L", "word": "LAMA"},
+                    {"leter": "R", "word": "RAMA"},
+                    {"leter": "X", "word": "XAMÃ"}
+                ]
+            }
+        ]
+    },
+    "billionaires": [
+        {
+            "name": "Elton Must"
+        },
+        {
+            "name": "Jefr Beijos"
+        }
+    ]
+}
