@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://i3by40qltyvg"]
+
+[ext_resource type="Script" uid="uid://dgyf70cq3m2m0" path="res://Scripts/HangmanManager.gd" id="1_lvypr"]
+
+[node name="HangmanManager" type="Node"]
+script = ExtResource("1_lvypr")

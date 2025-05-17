@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvj52tch1jsju"]
+
+[ext_resource type="Script" uid="uid://b037ymcvpch5r" path="res://Scripts/Letter.gd" id="1_vcrhv"]
+[ext_resource type="Texture2D" uid="uid://dfxx2ymq2yvcq" path="res://Assets/Sprites/GUI/Key_48x48.png" id="2_laj0e"]
+
+[node name="Letter" type="Control"]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1760.0
+offset_bottom = -920.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vcrhv")
+
+[node name="Background" type="NinePatchRect" parent="."]
+modulate = Color(0, 0, 0, 0.2)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_laj0e")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Character" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
