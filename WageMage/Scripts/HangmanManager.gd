@@ -8,24 +8,28 @@ const LETTERS : Array[String] = [
 	"A", "S", "D", "F", "G", "H", "J", "K", "L",
 	"Z", "X", "C", "V", "B", "N", "M",
 ]
-const WORDS_ANIMALS : Array[String] = [
-	"VACA", "GATA", "PATA", "RATA", "NAJA", "PACA", "LAMA",
-]
 
-
+var gallows : Control = null
+var keys : Array[Control] = []
 var keys_line_1 : HBoxContainer = null
 var keys_line_2 : HBoxContainer = null
 var keys_line_3 : HBoxContainer = null
 var letter_list : HBoxContainer = null
-var words : Array[String] = []
+var library : Library = null
+var state : HangmanHandler.HangmanState = HangmanHandler.HangmanState.SETTING
+var word_data : WordData = null
+var word : Array[Control] = []
 
 
 # Ready ========================================================================
 func _ready() -> void:
+	gallows = get_node('../GameLayer/GameContainer/Gallows')
+	gallows.billionaire_died.connect(_on_billionaire_died)
 	keys_line_1 = get_node('../GameLayer/GameContainer/Keys/Lines/Line_1')
 	keys_line_2 = get_node('../GameLayer/GameContainer/Keys/Lines/Line_2')
 	keys_line_3 = get_node('../GameLayer/GameContainer/Keys/Lines/Line_3')
 	letter_list = get_node('../GameLayer/GameContainer/Word/Letters')
+	library = Library.new()
 	configure()
 
 
@@ -33,11 +37,21 @@ func _ready() -> void:
 func configure() -> void:
 	configure_keyboard()
 	configure_word()
+	state = HangmanHandler.HangmanState.PLAYING
 
 
 # Match the selected key with the letter ---------------------------------------
 func match_letter(selected_key:Control) -> void:
-	selected_key.update_key(selected_key.letter == "A")
+	var is_correct : bool = false
+	var letter_counter : int = 0
+	for letter in word_data.fixed:
+		if letter == selected_key.letter:
+			is_correct = true
+			word[letter_counter].set_letter(letter, HangmanHandler.LetterType.CORRECT)
+		letter_counter += 1
+	selected_key.update_key(HangmanHandler.KeyState.CORRECT if is_correct else HangmanHandler.KeyState.INCORRECT)
+	if not is_correct:
+		gallows.wrong_guess()
 
 
 # Configure the keyboard keys --------------------------------------------------
@@ -53,22 +67,33 @@ func configure_keyboard() -> void:
 			keys_line_2.add_child(new_key)
 		else:
 			keys_line_3.add_child(new_key)
+		keys.append(new_key)
 		counter += 1
 
 
 # Configure the word to guess --------------------------------------------------
 func configure_word() -> void:
-	words = WORDS_ANIMALS.duplicate()
-	print(words)
+	word_data = library.load_word_data("pt")
+	print(word_data)
 	var counter : int = 0
 	while counter < 4:
 		var new_letter : Node = LETTER.instantiate()
 		new_letter.configure()
 		letter_list.add_child(new_letter)
+		word.append(new_letter)
 		counter += 1
 
 
 # Signals ======================================================================
 
+# When the letter is selected --------------------------------------------------
 func _on_letter_selected(selected_key:Control) -> void:
 	match_letter(selected_key)
+
+
+# When the billionaire dies ----------------------------------------------------
+func _on_billionaire_died() -> void:
+	state = HangmanHandler.HangmanState.RESULT
+	for key in keys:
+		if key.state == HangmanHandler.KeyState.AVALIABLE:
+			key.update_key(HangmanHandler.KeyState.UNAVAILABLE)
