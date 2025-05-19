@@ -3,11 +3,10 @@ extends Control
 
 signal letter_selected(key:String)
 
-
-const AVALIABLE_COLOR : Color = Color(1, 1, 1, 1)
-const CORRECT_COLOR : Color = Color(0, 1, 0, 1)
-const INCORRECT_COLOR : Color = Color(1, 0, 0, 1)
-
+const AVALIABLE_COLOR : Color = Color(1.0, 1.0, 1.0, 1.0)
+const CORRECT_COLOR : Color = Color(0.0, 1.0, 0.0, 1.0)
+const INCORRECT_COLOR : Color = Color(1.0, 0.0, 0.0, 1.0)
+const UNAVAILABLE_COLOR : Color = Color(0.6, 0.6, 0.6, 1.0)
 
 var letter : String = ""
 var size_tween : Tween = null
@@ -29,12 +28,23 @@ func configure(new_letter:String) -> void:
 
 
 # Update the key state/color ---------------------------------------------------
-func update_key(is_correct:bool) -> void:
-	state = HangmanHandler.KeyState.CORRECT if is_correct else HangmanHandler.KeyState.INCORRECT
-	if color_tween:
-		color_tween.kill()
-	color_tween = get_tree().create_tween()
-	color_tween.tween_property($Container/Background, 'modulate', CORRECT_COLOR if is_correct else INCORRECT_COLOR, 0.1)
+func update_key(new_state:HangmanHandler.KeyState) -> void:
+	if state != new_state:
+		var target_color : Color = AVALIABLE_COLOR
+		state = new_state
+		match state:
+			HangmanHandler.KeyState.AVALIABLE:
+				target_color = AVALIABLE_COLOR
+			HangmanHandler.KeyState.UNAVAILABLE:
+				target_color = UNAVAILABLE_COLOR
+			HangmanHandler.KeyState.CORRECT:
+				target_color = CORRECT_COLOR
+			HangmanHandler.KeyState.INCORRECT:
+				target_color = INCORRECT_COLOR
+		if color_tween:
+			color_tween.kill()
+		color_tween = get_tree().create_tween()
+		color_tween.tween_property($Container/Background, 'modulate', target_color, 0.1)
 
 
 # Signals ======================================================================
@@ -62,6 +72,4 @@ func _on_container_mouse_exited() -> void:
 func _on_container_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if Input.is_action_just_released('LeftClick') and state == HangmanHandler.KeyState.AVALIABLE:
-			state = HangmanHandler.KeyState.INCORRECT
 			letter_selected.emit(self)
-	
