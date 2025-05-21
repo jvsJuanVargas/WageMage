@@ -1,7 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbmwxo8bp2lbo"]
+[gd_scene load_steps=7 format=3 uid="uid://dbmwxo8bp2lbo"]
 
 [ext_resource type="Script" uid="uid://d2ag4lctmqnbk" path="res://Scripts/Gallows.gd" id="1_xfaw0"]
+[ext_resource type="Texture2D" uid="uid://dfxx2ymq2yvcq" path="res://Assets/Sprites/GUI/Key_48x48.png" id="2_6hf33"]
 [ext_resource type="PackedScene" uid="uid://di1wyb3unwlcn" path="res://Scenes/GUI/BodyPart.tscn" id="2_ac441"]
+
+[sub_resource type="Animation" id="Animation_ac441"]
+resource_name = "Swing"
+length = 4.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(0.5, 2.5, 0.5, 2.5, 1),
+"update": 0,
+"values": [0.0, -0.10472, 0.0, 0.10472, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6hf33"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_47psv"]
+_data = {
+&"RESET": SubResource("Animation_6hf33"),
+&"Swing": SubResource("Animation_ac441")
+}
 
 [node name="Gallows" type="Control"]
 custom_minimum_size = Vector2(668, 620)
@@ -15,14 +55,24 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xfaw0")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="NinePatchRect" parent="."]
+modulate = Color(1, 1, 1, 0.2)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0.4)
+texture = ExtResource("2_6hf33")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="BodyAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_47psv")
+}
 
 [node name="Body" type="Control" parent="."]
 layout_mode = 1
@@ -37,6 +87,7 @@ offset_right = 310.0
 offset_bottom = 310.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(310, 96)
 
 [node name="Head" parent="Body" instance=ExtResource("2_ac441")]
 offset_left = 230.0
