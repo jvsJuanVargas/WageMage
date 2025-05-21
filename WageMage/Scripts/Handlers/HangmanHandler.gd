@@ -1,6 +1,17 @@
 class_name HangmanHandler
 
 
+# Body part --------------------------------------------------------------------
+enum BodyPart {
+    HEAD,
+    TRUNK,
+    LEFT_ARM,
+    RIGHT_ARM,
+    LEFT_LEG,
+    RIGHT_LEG,
+}
+
+
 # Hangman state ----------------------------------------------------------------
 enum HangmanState {
     SETTING,
