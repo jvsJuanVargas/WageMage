@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbmwxo8bp2lbo"]
+[gd_scene load_steps=3 format=3 uid="uid://dbmwxo8bp2lbo"]
 
 [ext_resource type="Script" uid="uid://d2ag4lctmqnbk" path="res://Scripts/Gallows.gd" id="1_xfaw0"]
+[ext_resource type="PackedScene" uid="uid://di1wyb3unwlcn" path="res://Scenes/GUI/BodyPart.tscn" id="2_ac441"]
 
 [node name="Gallows" type="Control"]
+custom_minimum_size = Vector2(668, 620)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,14 +24,55 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.4)
 
-[node name="Attempts" type="Label" parent="."]
+[node name="Body" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -310.0
+offset_right = 310.0
+offset_bottom = 310.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 120
-text = "6"
-horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="Head" parent="Body" instance=ExtResource("2_ac441")]
+offset_left = 230.0
+offset_right = 390.0
+
+[node name="Trunk" parent="Body" instance=ExtResource("2_ac441")]
+offset_left = 230.0
+offset_top = 230.0
+offset_right = 390.0
+offset_bottom = 390.0
+body_part = 1
+
+[node name="LeftArm" parent="Body" instance=ExtResource("2_ac441")]
+offset_left = 60.0
+offset_top = 230.0
+offset_right = 220.0
+offset_bottom = 390.0
+body_part = 2
+
+[node name="RightArm" parent="Body" instance=ExtResource("2_ac441")]
+offset_left = 400.0
+offset_top = 230.0
+offset_right = 560.0
+offset_bottom = 390.0
+body_part = 3
+
+[node name="LeftLeg" parent="Body" instance=ExtResource("2_ac441")]
+offset_left = 140.0
+offset_top = 460.0
+offset_right = 300.0
+offset_bottom = 620.0
+body_part = 4
+
+[node name="RightLeg" parent="Body" instance=ExtResource("2_ac441")]
+offset_left = 315.0
+offset_top = 460.0
+offset_right = 475.0
+offset_bottom = 620.0
+body_part = 5

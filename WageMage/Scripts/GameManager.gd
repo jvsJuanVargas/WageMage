@@ -15,7 +15,6 @@ extends Node
 # === by Juan Vargas and Flávio Henkes =========================================
 
 
-# [!!!TODO] Criação do arquivo de dados do jogo (Data/Library.js)
 # [!!!TODO] Criação do arquivo de localização do jogo (Data/Localization.csv)
 
 
@@ -115,6 +114,10 @@ func _input(event:InputEvent) -> void:
 			load_game()
 			load_playthrough(game_data.current_playthough_slot)
 			print("Informação carregada")
+		
+		# Reload current scene
+		if not event.pressed and event.keycode == KEY_F5:
+			change_scene(OptionsHandler.SceneScreen.HANGMAN_SCREEN)
 
 
 # Settings =====================================================================
