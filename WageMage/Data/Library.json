@@ -146,10 +146,22 @@
 	},
 	"billionaires": [
 		{
-			"name": "Elton Must"
+			"name": "Elton Must",
+			"sprites": {
+				"head": "Trash/Billionaire_Head.png",
+				"trunk": "Trash/Billionaire_Trunk.png",
+				"arm": "Trash/Billionaire_Arm.png",
+				"leg": "Trash/Billionaire_Leg.png"
+			}
 		},
 		{
-			"name": "Jefr Beijos"
+			"name": "Jefr Beijos",
+			"sprites": {
+				"head": "Trash/Billionaire_Head.png",
+				"trunk": "Trash/Billionaire_Trunk.png",
+				"arm": "Trash/Billionaire_Arm.png",
+				"leg": "Trash/Billionaire_Leg.png"
+			}
 		}
 	]
 }

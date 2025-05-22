@@ -4,6 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://dfxx2ymq2yvcq" path="res://Assets/Sprites/GUI/Key_48x48.png" id="2_6hf33"]
 [ext_resource type="PackedScene" uid="uid://di1wyb3unwlcn" path="res://Scenes/GUI/BodyPart.tscn" id="2_ac441"]
 
+[sub_resource type="Animation" id="Animation_6hf33"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_ac441"]
 resource_name = "Swing"
 length = 4.0
@@ -20,21 +35,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.5, 2.5, 0.5, 2.5, 1),
 "update": 0,
 "values": [0.0, -0.10472, 0.0, 0.10472, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_6hf33"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_47psv"]
@@ -90,40 +90,47 @@ grow_vertical = 2
 pivot_offset = Vector2(310, 96)
 
 [node name="Head" parent="Body" instance=ExtResource("2_ac441")]
-offset_left = 230.0
-offset_right = 390.0
+z_index = 20
+offset_left = 167.0
+offset_right = 453.0
+offset_bottom = 286.0
 
 [node name="Trunk" parent="Body" instance=ExtResource("2_ac441")]
-offset_left = 230.0
-offset_top = 230.0
-offset_right = 390.0
-offset_bottom = 390.0
+z_index = 18
+offset_left = 198.0
+offset_top = 254.0
+offset_right = 422.0
+offset_bottom = 478.0
 body_part = 1
 
 [node name="LeftArm" parent="Body" instance=ExtResource("2_ac441")]
-offset_left = 60.0
-offset_top = 230.0
-offset_right = 220.0
-offset_bottom = 390.0
+z_index = 19
+offset_left = 70.0
+offset_top = 286.0
+offset_right = 230.0
+offset_bottom = 446.0
 body_part = 2
 
 [node name="RightArm" parent="Body" instance=ExtResource("2_ac441")]
-offset_left = 400.0
-offset_top = 230.0
-offset_right = 560.0
-offset_bottom = 390.0
+z_index = 19
+offset_left = 390.0
+offset_top = 286.0
+offset_right = 550.0
+offset_bottom = 446.0
 body_part = 3
 
 [node name="LeftLeg" parent="Body" instance=ExtResource("2_ac441")]
-offset_left = 140.0
+z_index = 17
+offset_left = 150.0
 offset_top = 460.0
-offset_right = 300.0
+offset_right = 310.0
 offset_bottom = 620.0
 body_part = 4
 
 [node name="RightLeg" parent="Body" instance=ExtResource("2_ac441")]
-offset_left = 315.0
+z_index = 17
+offset_left = 310.0
 offset_top = 460.0
-offset_right = 475.0
+offset_right = 470.0
 offset_bottom = 620.0
 body_part = 5
