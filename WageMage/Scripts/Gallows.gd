@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 # Configure ====================================================================
-func configure(_billionaire_data:BillionaireData) -> void:
+func configure(billionaire_data:BillionaireData) -> void:
 	parts.clear()
 	parts.append($Body/Head)
 	parts.append($Body/Trunk)
@@ -26,7 +26,7 @@ func configure(_billionaire_data:BillionaireData) -> void:
 	parts.append($Body/LeftLeg)
 	parts.append($Body/RightLeg)
 	for part in parts:
-		part.configure()
+		part.configure(billionaire_data)
 	$BodyAnimation.speed_scale = 0.6
 
 

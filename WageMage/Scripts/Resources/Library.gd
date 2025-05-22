@@ -16,8 +16,16 @@ func _init() -> void:
 # Load billionaire data --------------------------------------------------------
 func load_billionaire_data() -> BillionaireData:
 	var billionaire_data : Dictionary = library_data['billionaires'][randi_range(0, library_data['billionaires'].size() - 1)]
+	var head : Resource = load(billionaire_data['sprites']['head'])
+	var trunk : Resource = load(billionaire_data['sprites']['trunk'])
+	var arm : Resource = load(billionaire_data['sprites']['arm'])
+	var leg : Resource = load(billionaire_data['sprites']['leg'])
 	return BillionaireData.new({
 		'name': billionaire_data['name'],
+		'head': head,
+		'trunk': trunk,
+		'arm': arm,
+		'leg': leg,
 	})
 
 
